@@ -34,7 +34,7 @@ const Addproducts = () => {
 
       // nteract with axios module that will help you use the method POST
       const response = await axios.post("https://brayemar.alwaysdata.net/api/add_product", formdata)
-
+      
       // set the loading back to default
       setLoading(false);
 
@@ -46,6 +46,13 @@ const Addproducts = () => {
       setProductDescription("");
       setProductCost("");
       setProductPhoto("");
+
+      // clearing the image
+      e.target.reset()
+
+        setTimeout(() => {
+        setSuccess("");
+      }, 5000);
 
     }
     catch(error){
